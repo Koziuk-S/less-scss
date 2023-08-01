@@ -1,0 +1,323 @@
+$btns: (
+  primary: (
+    bg-color: #0d6efd,
+  ),
+  secondary: (
+    bg-color: #6c757d,
+  ),
+  dangare: (
+    bg-color: red,
+  ),
+  info: (
+    bg-color: lightblue,
+    text-color: #000,
+  ),
+  warning: (
+    bg-color: orange,
+    text-color: #000,
+  ),
+  tomato: (
+    bg-color: tomato,
+  ),
+);
+
+%btn {
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+@each $key, $value in $btns {
+  .btn_#{$key} {
+    @extend %btn;
+
+    background-color: map-get($value, bg-color);
+    border: 1px solid map-get($value, bg-color);
+    @if (map-has-key($value, text-color)) {
+      color: map-get($value, text-color);
+    } @else {
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: lighten(map-get($value, bg-color), 10);
+      border-color: lighten(map-get($value, bg-color), 10);
+    }
+  }
+
+  .btn_outline-#{$key} {
+    @extend %btn;
+
+    background-color: transparent;
+    border: 1px solid map-get($value, bg-color);
+    color: map-get($value, bg-color);
+
+    &:hover {
+      background-color: map-get($value, bg-color);
+      border-color: map-get($value, bg-color);
+      color: if(
+        map-has-key($value, text-color),
+        map-get($value, text-color),
+        #fff
+      );
+    }
+  }
+}
+
+// $color-list: red, green, blue;
+
+// @each $color in $color-list {
+//   .text-#{$color} {
+//     color: $color;
+//   }
+// }
+
+// @for $i from 1 through 10 {
+//   .col-#{$i} {
+//     width: calc(#{$i} * 10%);
+//   }
+// }
+
+// header {
+//   height: 200px;
+//   background-color: red;
+// }
+
+// $btns: (
+//   primary: #0d6efd,
+//   secondary: #6c757d,
+//   dangare: red
+//  );
+
+// @each $key, $value in $btns {
+//   .btn_#{$key} {
+//     background-color: $value;
+//   }
+// }
+// @for $i from 1 through 10 {
+//   .col-#{$i} {
+//     width: calc($i * 10%);
+//   }
+// }
+
+// @mixin header-img($id: 89, $size: 1200) {
+//   background-image: url('https://picsum.photos/id/#{$id}/#{$size}');
+//   // background-size: cover;
+// }
+
+// html, body {
+//   margin: 0;
+//   height: 100%;
+// }
+
+// header {
+//   @include header-img(67, 500);
+//   height: 100%;
+// }
+
+// @mixin max-width($max-width) {
+//   @media scrin and (max-width: $max-width) {
+//     @content;
+//   }
+// }
+
+// .header {
+//   display: flex;
+
+//   @include max-width(991px) {
+//     flex-direction: row;
+//   }
+
+//   &__title {
+//     padding-bottom: 24px;
+
+//     @include max-width(991px) {
+//       padding-bottom: 14px;
+//     }
+//   }
+// }
+
+// @media scrin and (max-width: 991px) {
+//   .header {
+//     flex-direction: row;
+
+//     &__title {
+//       padding-bottom: 14px;
+//     }
+//   }
+// }
+
+// @mixin layout() {
+//   &__header {
+//     color: red;
+//   }
+
+//   &__content {
+//     color: red;
+//   }
+
+//  &__footer {
+//    color: red;
+//  }
+// }
+
+// .card {
+//   @include layout();
+// }
+
+// .box {
+//   @include layout();
+// }
+
+// // map
+// $colors: (
+//   primary: #0d6efd,
+//   secondary: #6c757d,
+//   dangare: red
+// );
+
+// @mixin btn($bg-color, $text-color: #000) {
+//   background-color: map-get($colors, $bg-color);
+//   color: $text-color;
+// }
+
+// %btn {
+//   padding: 8px 12px;
+//   font-size: 16px;
+//   font-weight: normal;
+// }
+
+// .btn_primary {
+//   @extend %btn;
+//   @include btn(primary);
+// }
+
+// .btn_secondary {
+//   @extend %btn;
+//   @include btn(secondary, #fff);
+// }
+
+// .btn_dangare {
+//   @extend %btn;
+//   @include btn(dangare);
+// }
+
+// .d-flex {
+//   display: flex;
+// }
+
+// .flex-align-center {
+
+//   @extend .d-flex;
+//   align-items: center;
+// }
+
+// .flex-justify-center {
+//   @extend .d-flex;
+//   justify-items: center;
+// }
+
+// // map
+// $colors: (
+//   primary: #0d6efd,
+//   secondary: #6c757d
+// );
+// %btn {
+//   padding: 8px 12px;
+//   font-size: 16px;
+//   color: #000;
+//   font-weight: normal;
+// }
+
+// .btn_primary {
+//   @extend %btn;
+
+//   background-color: map-get($colors, primary);
+// }
+
+// .btn_secondary {
+//   @extend %btn;
+
+//   background-color: map-get($colors, secondary);
+// }
+
+// bla bla bla I'm scss comment
+// $color-primary: red;
+// $font-size-md: 16px;
+// $font-size-lg: 24px;
+
+// $content: 'Load more...';
+// $is-open: true; // boolean (true/false)
+
+// // list
+// $color-list: red, green, blue;
+
+// $animals: puma, cat, dog;
+// // or
+// $animal-list: (puma, cat, dog);
+
+// // map
+// $colors: (
+//   primary: #0d6efd,
+//   secondary: #6c757d
+// );
+
+// .btn_primary {
+//   background-color: map-get($colors, primary);
+// }
+
+// .btn_secondary {
+//   background-color: map-get($colors, secondary);
+// }
+
+// .tree-dots {
+//   color: $color-primary;
+//   &::after {
+//     content: $content;
+//   }
+// }
+
+// .card {
+//   color: $color-primary;
+//   // font-family: Arial;
+//   // font-size: 24px;
+//   // font-weight: bold;
+
+//   font: {
+//     family: Arial;
+//     size: $font-size-lg;
+//     weight: bold;
+//   }
+
+//   // padding-left: 6px;
+//   // padding-right: 10px;
+//   padding: {
+//     left: 6px;
+//     right: 10px;
+//   }
+
+// &:hover {
+//   color: red;
+// }
+
+// header {
+//   color: red;
+
+//   h3 {
+//     color: red;
+
+//     &:hover {
+//       color: red;
+//     }
+//   }
+// }
+
+// .content {
+//   color: red;
+// }
+
+// footer {
+//   color: red;
+// }
+// }
