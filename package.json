@@ -1,0 +1,24 @@
+{
+  "name": "less-scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass-build": "sass --style=expanded ./styles:./css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koziuk-S/less-scss.git"
+  },
+  "keywords": [],
+  "author": "Serhiy Koziuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Koziuk-S/less-scss/issues"
+  },
+  "homepage": "https://github.com/Koziuk-S/less-scss#readme",
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "sass": "^1.64.2"
+  }
+}
