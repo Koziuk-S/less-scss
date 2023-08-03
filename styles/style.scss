@@ -1,5 +1,11 @@
-$color: red;
+@use "../node_modules/bootstrap/scss/bootstrap";
 
-p {
-  color: $color;
+@use "./base";
+
+@use "./components";
+
+@use "./layout";
+
+[class*="col"] {
+  border: 1px solid #000;
 }

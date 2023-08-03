@@ -1,9 +1,17 @@
 # Less SCSS
 
-1. Install Dependencies packeges you should run:
+## Install Dependencies
 
-   `npm install`
+You should run `npm install`
 
-2. For build styles you should run:
+## Run dev
 
-   `npm run sass-build`
+Run `npm run sass-dev` dev mode.
+
+## Build
+
+Run `npm run sass-build` to build the styles.
+
+## Build Prod
+
+Run `npm run sass-build:prod` to build the styles for prod.

@@ -1,0 +1,6 @@
+@use "../base/colors" as *;
+
+.text {
+  color: $text-color;
+  line-height: 1.5;
+}

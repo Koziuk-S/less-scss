@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass-build": "sass --style=expanded ./styles:./css"
+    "sass-dev": "npm run sass-build && sass --watch --update ./styles:./css",
+    "sass-build": "sass --style=expanded ./styles:./css",
+    "sass-build:prod": "sass --no-source-map --style=compressed ./styles:./css"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,8 @@
   "devDependencies": {
     "node-sass": "^9.0.0",
     "sass": "^1.64.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.1"
   }
 }

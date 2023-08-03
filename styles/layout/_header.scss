@@ -1,0 +1,9 @@
+@use "../components/typography" as *;
+
+.main-header {
+  padding: 24px 16px;
+
+  &__sub-title {
+    @extend .text;
+  }
+}
